@@ -1,1 +1,1 @@
-# Advent of Code 2019 in Rust 🦀
+# [Advent of Code 2019](https://adventofcode.com/2019) in Rust 🦀
