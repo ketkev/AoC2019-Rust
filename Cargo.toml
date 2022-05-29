@@ -1,0 +1,10 @@
+[package]
+name = "aoc2019rust"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+strip = true
+
+[dependencies]
+term-table = "1.3.2"
