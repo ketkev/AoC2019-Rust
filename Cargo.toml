@@ -8,3 +8,5 @@ strip = true
 
 [dependencies]
 term-table = "1.3.2"
+num = "0.4.0"
+rstest = "0.13.0"

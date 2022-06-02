@@ -1,5 +1,6 @@
 mod days;
 mod input;
+mod interpreter;
 
 use std::time::Instant;
 use term_table::{Table, TableStyle};
@@ -7,11 +8,13 @@ use term_table::row::Row;
 use term_table::table_cell::{Alignment, TableCell};
 use days::*;
 use crate::day1::Day1;
+use crate::day2::Day2;
 use crate::day::Day;
 
-fn get_day(day_num: i32) -> impl Day {
+fn get_day(day_num: i32) -> Box<dyn Day> {
     match day_num {
         1 => Day1::parse(include_str!("../data/day1.txt")),
+        2 => Day2::parse(include_str!("../data/day2.txt")),
         _ => panic!("Invalid day")
         // TODO: Handle with result
     }
@@ -19,7 +22,7 @@ fn get_day(day_num: i32) -> impl Day {
 
 fn main() {
     // TODO: Add CLI
-    let days = 1..2;
+    let days = 1..3;
     let mut used_time: u128 = 0;
     let mut table = Table::new();
 

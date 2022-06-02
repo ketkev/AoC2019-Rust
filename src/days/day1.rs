@@ -22,10 +22,12 @@ impl Day1 {
 }
 
 impl Day for Day1 {
-    fn parse(input_str: &str) -> Self {
-        let modules = input::list_of_digits(input_str);
+    fn parse(input_str: &str) -> Box<dyn Day> {
+        let modules = input::list_of_digits::<i32>(input_str, '\n');
 
-        Day1 { modules }
+        Box::new(
+            Day1 { modules }
+        )
     }
 
     fn part1(&self) -> String {
